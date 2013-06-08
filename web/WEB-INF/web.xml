@@ -4,6 +4,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>bxcrm</display-name>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>
+			org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
 	<!-- 载入spring上下文 -->
 	<servlet>
 		<servlet-name>contextConfigLocation</servlet-name>
@@ -16,18 +26,9 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>contextConfigLocation</servlet-name>
-		<url-pattern>*.html</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-
-	<!-- Spring 刷新Introspector防止内存泄露 -->
-	<listener>
-		<listener-class>
-			org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-	</listener>
 	
 	<!-- 字符编码过滤器 -->
 	<filter>
