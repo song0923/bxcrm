@@ -1,3 +1,0 @@
-#parse("/WEB-INF/layout/header.vm")
-  $screen_content
-#parse("/WEB-INF/layout/footer.vm")

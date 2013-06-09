@@ -44,7 +44,8 @@
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
 		<property name="cache" value="true" />
-		<property name="prefix" value="/WEB-INF/velocity/" />
+		<!-- velocityConfigurer中已配置目录，此处留空 -->
+		<property name="prefix" value="" />
 		<property name="suffix" value=".vm" />
 		<property name="contentType">
 			<value>text/html;charset=utf-8</value>
@@ -52,7 +53,7 @@
 		<property name="toolboxConfigLocation">
 			<value>classpath*:/velocity-toolbox.xml</value>
 		</property>
-		<property name="layoutUrl" value="/WEB-INF/layout/layout.vm" />
+		<property name="layoutUrl" value="layout/layout.vm" />
 		<property name="allowSessionOverride" value="true" />
 		<property name="allowRequestOverride" value="true" />
 		<property name="exposeSessionAttributes" value="true" />
@@ -64,7 +65,7 @@
 	<bean id="velocityConfigurer"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
 		<property name="resourceLoaderPath">
-			<value>/WEB-INF/velocity</value>
+			<value>/WEB-INF/velocity/</value>
 		</property>
 		<property name="velocityProperties">
 			<props>
