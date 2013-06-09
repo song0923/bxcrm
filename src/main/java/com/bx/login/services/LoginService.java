@@ -10,4 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginService {
 
+	public void test(){
+		System.out.println("测试service");
+	}
 }
